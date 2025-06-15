@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, MessageCircle, Phone, Moon, User, Sparkles, Star, Zap } from 'lucide-react';
+import { Heart, MessageCircle, Phone, Moon, User, Sparkles, Star, Zap, ArrowRight, Play, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -57,13 +57,16 @@ const Hero = () => {
                 </Button>
               </Link>
               
-              <Button variant="outline" className="group relative overflow-hidden bg-white/90 backdrop-blur-sm text-gray-900 text-lg px-10 py-6 rounded-2xl border-3 border-gray-300 hover:border-green-400 hover:bg-green-50 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center space-x-2">
-                  <Heart className="w-5 h-5 group-hover:text-green-600 transition-colors duration-300" />
-                  <span>Learn More</span>
-                </div>
-              </Button>
+              <Link to="/learn-more">
+                <Button variant="outline" className="group relative overflow-hidden bg-white/90 backdrop-blur-sm text-gray-900 text-lg px-10 py-6 rounded-2xl border-3 border-gray-300 hover:border-green-400 hover:bg-green-50 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative flex items-center space-x-2">
+                    <Heart className="w-5 h-5 group-hover:text-green-600 transition-colors duration-300" />
+                    <span>Learn More</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </Button>
+              </Link>
             </div>
 
             {/* Enhanced Social Proof */}
@@ -111,45 +114,53 @@ const Hero = () => {
                   
                   {/* Enhanced Feature Icons */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-green-500/25">
-                        <MessageCircle className="w-6 h-6 text-white" />
+                    <Link to="/signup" className="group">
+                      <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-green-500/25">
+                          <MessageCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">AI Chat</p>
+                          <p className="text-sm text-green-600 font-medium">24/7 Support</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-gray-900">AI Chat</p>
-                        <p className="text-sm text-green-600 font-medium">24/7 Support</p>
-                      </div>
-                    </div>
+                    </Link>
                     
-                    <div className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25">
-                        <Phone className="w-6 h-6 text-white" />
+                    <Link to="/signup" className="group">
+                      <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">AI Calls</p>
+                          <p className="text-sm text-blue-600 font-medium">Voice Support</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-gray-900">AI Calls</p>
-                        <p className="text-sm text-blue-600 font-medium">Voice Support</p>
-                      </div>
-                    </div>
+                    </Link>
                     
-                    <div className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25">
-                        <Moon className="w-6 h-6 text-white" />
+                    <Link to="/signup" className="group">
+                      <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25">
+                          <Moon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">Sleep Aid</p>
+                          <p className="text-sm text-purple-600 font-medium">Rest Better</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-gray-900">Sleep Aid</p>
-                        <p className="text-sm text-purple-600 font-medium">Rest Better</p>
-                      </div>
-                    </div>
+                    </Link>
                     
-                    <div className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-orange-500/25">
-                        <Heart className="w-6 h-6 text-white" />
+                    <Link to="/signup" className="group">
+                      <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-200/50 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-orange-500/25">
+                          <Heart className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">Therapy</p>
+                          <p className="text-sm text-orange-600 font-medium">Guided Exercises</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-bold text-gray-900">Therapy</p>
-                        <p className="text-sm text-orange-600 font-medium">Guided Exercises</p>
-                      </div>
-                    </div>
+                    </Link>
                   </div>
 
                   {/* Enhanced Progress Indicator */}

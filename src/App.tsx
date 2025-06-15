@@ -22,6 +22,7 @@ import AICall from "./pages/AICall";
 import ManagePayments from "./pages/ManagePayments";
 import SleepStories from "./pages/SleepStories";
 import Programs from "./pages/Programs";
+import LearnMore from "./pages/LearnMore";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/learn-more" element={<LearnMore />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/assessment-results" element={<AssessmentResults />} />

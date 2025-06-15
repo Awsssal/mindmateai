@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Sparkles, Star, Heart, Brain, Moon, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const HeroSlideshow = () => {
   const slides = [
@@ -12,6 +13,7 @@ const HeroSlideshow = () => {
       icon: Heart,
       accent: "from-green-400 to-emerald-500",
       cta: "Start Meditation",
+      ctaLink: "/signup",
       stats: { users: "50K+", rating: "4.9" }
     },
     {
@@ -22,6 +24,7 @@ const HeroSlideshow = () => {
       icon: Brain,
       accent: "from-blue-400 to-indigo-500",
       cta: "Chat Now",
+      ctaLink: "/signup",
       stats: { users: "100K+", rating: "4.8" }
     },
     {
@@ -32,6 +35,7 @@ const HeroSlideshow = () => {
       icon: Zap,
       accent: "from-purple-400 to-pink-500",
       cta: "Train Brain",
+      ctaLink: "/signup",
       stats: { users: "75K+", rating: "4.9" }
     },
     {
@@ -42,6 +46,7 @@ const HeroSlideshow = () => {
       icon: Moon,
       accent: "from-indigo-400 to-blue-500",
       cta: "Sleep Stories",
+      ctaLink: "/signup",
       stats: { users: "80K+", rating: "4.8" }
     }
   ];
@@ -165,11 +170,13 @@ const HeroSlideshow = () => {
                     </div>
                   </div>
                   
-                  {/* CTA Button */}
-                  <Button className={`bg-gradient-to-r ${slide.accent} hover:shadow-2xl hover:scale-110 text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-xl transform transition-all duration-300 border-2 border-white/20 backdrop-blur-sm`}>
-                    <Play className="w-5 h-5 mr-2" />
-                    {slide.cta}
-                  </Button>
+                  {/* CTA Button - Now clickable */}
+                  <Link to={slide.ctaLink}>
+                    <Button className={`bg-gradient-to-r ${slide.accent} hover:shadow-2xl hover:scale-110 text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-xl transform transition-all duration-300 border-2 border-white/20 backdrop-blur-sm`}>
+                      <Play className="w-5 h-5 mr-2" />
+                      {slide.cta}
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
